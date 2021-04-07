@@ -1,0 +1,30 @@
+# This is an example .goreleaser.yml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod tidy
+
+builds:
+  - skip: true
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+release:
+  # If set to auto, will mark the release as not ready for production
+  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
+  # If set to true, will mark the release as not ready for production.
+  prerelease: auto
+  # If set to true, will not auto-publish the release.
+  draft: false
