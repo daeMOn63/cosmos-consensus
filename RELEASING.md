@@ -16,9 +16,11 @@ Here our current version is `v0.15.1`, and we want to create the `v0.15.2` relea
 
 ### Create release
 
-Run `./scripts/fetchai/release.sh`. This will ask for confirmation to update the `./version/version.go` file, and gives the option to view and edit the release notes. After that, it will invoke `goreleaser` that will create the release on Github.
+Run `./scripts/fetchai/release.sh` and answer the questions.
 
-## Next steps
+This will ask for confirmation to update the `./version/version.go` file, and provide the release version number. Then, it will automatically create and push a new tag to this version, offers the option to view and edit the release notes, and then invoke `goreleaser` which will create the release on Github.
+
+## Next stepsé
 
 To use this new release, both `cosmos-sdk` and `fetchd` need to be updated.
 
